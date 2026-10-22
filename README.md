@@ -1,76 +1,76 @@
-# CloakBox - VM Detection Bypass 🛡️
+<div align="center">
 
-> **⚠️ NOTICE: For support questions, please contact Batlez on Discord.**
+# 🛡️ CloakBox - VM Detection Bypass
 
 **Bypass virtual machine detection using a custom VirtualBox fork**
 
-![GitHub all releases](https://img.shields.io/github/downloads/Batlez/CloakBox/total?style=for-the-badge)
+[![GitHub all releases](https://img.shields.io/github/downloads/Batlez/CloakBox/total?style=for-the-badge&color=0078D4)](https://github.com/Batlez/CloakBox/releases)
+[![Works in 2026](https://img.shields.io/badge/Status-Works%20in%202026!-success?style=for-the-badge&color=2ea44f)](https://github.com/Batlez/CloakBox)
+[![Setup Time](https://img.shields.io/badge/Setup%20Time-~30%20Mins-orange?style=for-the-badge)](https://github.com/Batlez/CloakBox)
 
-Created by **Vektor T13** | Maintained by **Batlez** | Works in **2026!** | Setup time: **30 minutes**
+**Created by Vektor T13 • Maintained by Batlez**
 
-## 📥 Download
-- **Primary**: [GitHub Releases](https://github.com/Batlez/CloakBox/releases)
-- **Virus Scan**: [VirusTotal Scan](https://www.virustotal.com/gui/file/17ba6063ba20eba0ffc6538609d0cd216e015efd146e6e82e7de33e743cd8905/detection)
+---
 
-## 🎯 What it bypasses
-✅ Examity | ✅ Respondus | ✅ Safe Exam Browser | ✅ ProctorU | ✅ Pearson VUE | ✅ Lockdown Browser | ✅ Honorlock | ✅ And More!
+### 💬 Need Help?
+> **⚠️ For support questions, please contact `Batlez` on Discord.**
 
-##
-<p align="center"><strong><span style="font-size:1.5em">Click to see screenshots of CloakBox successfully bypassing exam proctoring detection</span></strong></p>
+---
+
+### 📥 Downloads & Verification
+[**📦 Download Latest Release (GitHub)**](https://github.com/Batlez/CloakBox/releases) &nbsp;|&nbsp; [**🛡️ VirusTotal Scan**](https://www.virustotal.com/gui/file/17ba6063ba20eba0ffc6538609d0cd216e015efd146e6e82e7de33e743cd8905/detection)
+
+---
+
+### 🎯 Verified Detection Bypass
+`✅ Examity` &nbsp;•&nbsp; `✅ Respondus` &nbsp;•&nbsp; `✅ Safe Exam Browser` &nbsp;•&nbsp; `✅ ProctorU`  
+`✅ Pearson VUE` &nbsp;•&nbsp; `✅ Lockdown Browser` &nbsp;•&nbsp; `✅ Honorlock` &nbsp;•&nbsp; `✅ And More!`
+
+---
+
+### 📸 Proof & Detection Bypass Screenshots
 
 <details>
-  <summary>Click to expand screenshots</summary>
+  <summary><b>Click to expand screenshots</b></summary>
+  <br>
 
 ![image](https://github.com/Batlez/HiddenVM/assets/63690709/51e1df60-4338-4da9-b5a3-ffe61c054797)
 ![image](https://github.com/Batlez/HiddenVM/assets/63690709/9f3ae77a-2bea-4824-bf3f-24556fb54045)
 ![image](https://github.com/Batlez/HiddenVM/assets/63690709/438c960f-f712-4016-8f92-0ad2c731a8bc)
 ![image](https://github.com/Batlez/HiddenVM/assets/63690709/17213a48-d6f3-4f82-87ac-2cb2f6f197f4)
 ![image](https://github.com/Batlez/HiddenVM/assets/63690709/47acefba-842b-4493-ad16-4709b9039dbc)
+
 </details>
+
+---
+
+</div>
 
 ## ⚡ Quick Start
 
 1. **Download & Unzip CloakBox**
-   - Unzip to `C:\CloakBox`.
+   - Unzip to a folder such as `C:\CloakBox`.
 
 2. **Install CloakBox & Extension Pack**
-   - Go to `CloakBox\Installer`.
-   - Run `CloakBox.exe` (as admin).
-   - Install the Oracle VirtualBox Extension Pack 7.2.4 if prompted.
+   - Go to `CloakBox\Install Cloakbox`.
+   - Run `CloakBox.exe` (as Administrator).
+   - Double-click and install `Oracle_VirtualBox_Extension_Pack-7.2.4.vbox-extpack`.
+   > **ℹ️ Note on "License Suspended":** The program window may show `"License Suspended"` in the title bar — don't worry! It is 100% safe to use and all features remain fully functional using the included PowerShell scripts.
 
-3. **Create & Configure Your VM**
-   - Recommended: Run `Run-Outside-VM.ps1` from `CloakBox\Utilities\Outside-VM`  
-     This script **guides you step-by-step** through optimal VM creation and setup, including recommended storage size, disk format, and hardware spoofing.
-   - If you are experienced, you may create/configure your VM manually according to your own preferences.
+3. **Configure Host & Create Your VM**
+   - Open `CloakBox\Powershell Scripts\Outside-VM`.
+   - Right-click `Enable PS Scripts.bat` and **Run as Administrator** (if scripts are restricted).
+   - Run `Run-Outside-VM.ps1` in PowerShell. This guided tool sets up recommended disk sizing, CPUID masks, and authentic hardware/SMBIOS spoofing.
 
-4. **Install Windows**
-   - Install Windows (10 or 11; see troubleshooting if you have issues with 11).
+4. **Install Windows & First Boot**
+   - Boot your VM and install Windows (Windows 10 or 11).
+   - *Tip:* Uncheck "Enable EFI" in VM settings if creating a Legacy BIOS VM for maximum compatibility.
 
-5. **Host-Side Script Execution**
-   - Run `Enable PS Scripts.bat` to allow PowerShell scripts.
-   - Run `Run-Outside-VM.ps1` (if not already used for VM creation).
-   - Optionally run `PS2-Mouse-Fix.ps1` if you encounter mouse issues.
+5. **Guest-Side Anti-Detection**
+   - Inside your running VM, open `Powershell Scripts\Inside-VM`.
+   - Run `Enable PS Scripts.bat` as Administrator.
+   - Run `Run-Inside-VM.ps1` to apply deep guest hardening (GPU, SCSI, MAC, and registry cleaning).
+   - **Restart the VM** when prompted.
 
-6. **Inside-VM Spoofing & Checks**
-   - After Windows installation and boot, inside the VM run scripts from `CloakBox\Utilities\Inside-VM`:
-     - `Enable PS Scripts.bat` (again, if needed)
-     - `Run-Inside-VM.ps1` (advanced guest spoofing)
-     - `AntiOS 3.4.5.exe` (optional, for deep cleaning/spoofing)
-     - `VM-Checker.ps1` (check your VM for detectable artifacts)
-     - `Pearson OnVUE.ps1` (for pre-exam or OnVUE system test)
-
-7. **Troubleshooting: Windows 11 Install**
-   - If you have issues installing Windows 11:
-     - Disable UEFI/Secure Boot (use Legacy BIOS for the VM)
-     - Disable TPM
-     - Try Windows 10 instead for reliability
-     - For CloakBox: System > Motherboard > Uncheck “Enable EFI”
-
-**Your VM should now be ready and properly spoofed for exam or privacy testing.**
-
-## 🎥 Need Help?
-- **Video Guide**: [YouTube Tutorial](https://www.youtube.com/watch?v=CvfCVzrTnq4)
-- **Discord Support**: **Batlez**
-
-## ⚖️ Legal
-For ethical testing and research purposes only. Users responsible for compliance with local laws.
+6. **Verify Undetectability**
+   - Inside the VM, run `VM-Checker.ps1` to view your live **Cloak Score %** and confirm all tests pass clean!
